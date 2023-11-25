@@ -1,0 +1,104 @@
+﻿<Window x:Class="MyrientDownloader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyrientDownloader"
+        mc:Ignorable="d"
+        Title="Myrient Downloader" Height="375" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock 
+            Grid.Row="0" 
+            x:Name="urlTextBlock" 
+            HorizontalAlignment="Left" 
+            Height="20" 
+            Margin="10,10,0,0" 
+            TextWrapping="NoWrap" 
+            VerticalAlignment="Top" 
+            Width="Auto"
+            Text="Enter URL to scrape here">
+        </TextBlock>
+        <TextBlock 
+            Grid.Row="0" 
+            x:Name="downloadLimitTextBlock" 
+            HorizontalAlignment="Left" 
+            Height="20" 
+            Margin="300,10,0,0" 
+            TextWrapping="NoWrap" 
+            VerticalAlignment="Top" 
+            Width="Auto"
+            Text="Download Limit">
+        </TextBlock>
+        <TextBox 
+            Grid.Row="1" 
+            x:Name="urlTextBox" 
+            ToolTip="URL should be for a page with .zip files available to download." 
+            HorizontalAlignment="Left" 
+            Height="25"
+            Margin="10,0,0,0" 
+            TextWrapping="Wrap" 
+            Text="http://example.com" 
+            VerticalAlignment="Top" 
+            Width="280">
+        </TextBox>
+        <TextBox 
+            Grid.Row="1" 
+            x:Name="downloadLimitBox" 
+            ToolTip="-1 indicates no limit and will download until every file is scraped, otherwise, program will stop downloading files after the limit is reached." 
+            HorizontalAlignment="Left" 
+            Height="23" 
+            Margin="300,0,0,0" 
+            TextWrapping="Wrap" 
+            Text="-1" 
+            VerticalAlignment="Top" 
+            Width="100">
+        </TextBox>
+        <Button 
+            Grid.Row="1" 
+            x:Name="downloadButton" 
+            Content="Download" 
+            HorizontalAlignment="Left" 
+            Margin="420,0,0,0" 
+            VerticalAlignment="Top" 
+            Width="75" 
+            Click="DownloadButton_Click">
+        </Button>
+        <TextBox 
+            Grid.Row="2" 
+            x:Name="fileTextBox" 
+            ToolTip="The folder in which the files will be downloaded to." 
+            HorizontalAlignment="Left" 
+            Height="23" 
+            Margin="10,0,0,0" 
+            TextWrapping="Wrap" 
+            Text="C:\Downloads" 
+            VerticalAlignment="Top" 
+            Width="400">
+        </TextBox>
+        <Button 
+            Grid.Row="2" 
+            x:Name="fileBrowserButton" 
+            Content="Browse" 
+            HorizontalAlignment="Left" 
+            Margin="420,0,0,0" 
+            VerticalAlignment="Top" 
+            Width="75" 
+            Click="BrowseFilesButton_Click">
+        </Button>
+        <ListBox 
+            Grid.Row="3" 
+            x:Name="filesListBox" 
+            HorizontalAlignment="Left" 
+            Height="200" 
+            Margin="10,0,0,0" 
+            VerticalAlignment="Top" 
+            Width="485"/>
+    </Grid>
+</Window>
